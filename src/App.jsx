@@ -1,11 +1,96 @@
 import React from 'react'
+
+import HiddenMenu from './components/NavMenu'
+
 import './App.css'
 
 function App() {
-  // const navMenu = document.querySelector('#navMenu')
-  // navMenu.addEventListener('click', () => {
-  //   navMenu.classList.toggle('active')
-  // })
+  const lanches = [
+    {
+      id: 1,
+      name: 'Pizza'
+    },
+    {
+      id: 2,
+      name: 'Combo Lanche'
+    },
+    {
+      id: 3,
+      name: 'Hamburguer'
+    },
+    {
+      id: 4,
+      name: 'Refrigerante'
+    },
+    {
+      id: 5,
+      name: 'Sucos'
+    },
+    {
+      id: 6,
+      name: 'Açais'
+    },
+    {
+      id: 7,
+      name: 'Marmita'
+    },
+    {
+      id: 8,
+      name: 'Saúdavel'
+    },
+    {
+      id: 9,
+      name: 'Japonesa'
+    }
+  ]
+  window.onload = function () {
+    const info = document.getElementById('name')
+    const info2 = document.getElementById('name2')
+    const info3 = document.getElementById('name3')
+    const prevBtn = document.querySelector('.prev-btn')
+    const nextBtn = document.querySelector('.next-btn')
+
+    let currentItem = 0
+
+    function showPerson() {
+      const item = lanches[currentItem]
+      info.textContent = item.name
+    }
+    function showItem() {
+      const itemsegundo = lanches[currentItem + 1]
+      info2.textContent = itemsegundo.name
+    }
+    function showTerceiroItem() {
+      const itemterceiro = lanches[currentItem + 2]
+      info3.textContent = itemterceiro.name
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      showPerson()
+      showItem()
+      showTerceiroItem()
+    })
+
+    nextBtn.addEventListener('click', function () {
+      currentItem++
+      if (currentItem > lanches.length - 1) {
+        currentItem = 0
+      }
+      showPerson()
+      showItem()
+      showTerceiroItem()
+    })
+
+    prevBtn.addEventListener('click', function () {
+      currentItem--
+      if (currentItem < 0) {
+        currentItem = lanches.length - 1
+      }
+      showPerson()
+      showItem()
+      showTerceiroItem()
+    })
+  }
 
   return (
     <div className="wrapper">
@@ -27,60 +112,69 @@ function App() {
             </svg>
           </button>
         </div>
-        <div id="navMenu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <HiddenMenu />
       </header>
       <div className="listamenu">
         <span className="selectmenu">
-          <svg
-            width="20"
-            height="36"
-            viewBox="0 0 20 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.8718 1.94873L1.92312 17.8974L17.8718 33.8461"
-              stroke="#E83737"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <button className="prev-btn">
+            <svg
+              width="20"
+              height="36"
+              viewBox="0 0 20 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.8718 1.94873L1.92312 17.8974L17.8718 33.8461"
+                stroke="#E83737"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </span>
-        <span className="listaitem">Pizzas</span>
-        <span className="listaitem">Combo Lanche</span>
-        <span className="listaitem">Hamburguer</span>
-        {/* <span className="listaitem">Refrigerantes</span>
-        <span className="listaitem">Sucos</span>
-        <span className="listaitem">Açais</span> */}
+        <span id="name" className="listaitem">
+          Pizzas
+        </span>
+        <span id="name2" className="listaitem">
+          Combo Lanche
+        </span>
+        <span id="name3" className="listaitem">
+          Hamburguer
+        </span>
         <span className="selectmenu">
-          <svg
-            width="20"
-            height="36"
-            viewBox="0 0 20 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.9231 33.8462L17.8718 17.8975L1.92309 1.94878"
-              stroke="#E83737"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <button className="next-btn">
+            <svg
+              width="20"
+              height="36"
+              viewBox="0 0 20 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1.9231 33.8462L17.8718 17.8975L1.92309 1.94878"
+                stroke="#E83737"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </span>
       </div>
 
-      <div>
+      <div id="add-tabela">
         <span>
-          <img src="../../public/image/comboum.png" alt="Combo 1" />
-          <p>Pizza G + Coca 2 lt</p>
-          <p>R$ 40,00</p>
+          <button id="add-pedido" className="bto-pedido">
+            <img src="../../public/image/comboum.png" alt="Combo 1" />
+            <p id="nome" name="nome" type="text">
+              Pizza G + Coca 2 lt
+            </p>
+            <p id="valor" name="valor" type="text">
+              R$ 40,00
+            </p>
+          </button>
         </span>
         <span>
           <img src="../../public/image/combodois.png" alt="Combo 2" />
