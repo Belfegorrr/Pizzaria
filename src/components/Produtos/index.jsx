@@ -1,7 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 
-export default function Table() {
-
+export default function Produtos() {
   let listaproduto = [
     {
       name: 'Pizza G + Coca 2L',
@@ -133,11 +133,4 @@ export default function Table() {
         )
     }
   }
-
-  return (    
-
-    <div>
-      <ProductList />
-    </div>
-  )
 }
