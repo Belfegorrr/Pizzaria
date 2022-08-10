@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Search from './components/SearchBar'
 
 import HiddenMenu from './components/NavMenu'
+import Modal from './components/Modal'
 
 import './App.css'
 
 function App() {
+  const [isModalVisible, setIsModalVisible] = useState(false)
   const lanches = [
     {
       id: 1,
@@ -166,7 +169,11 @@ function App() {
 
       <div id="add-tabela">
         <span>
-          <button id="add-pedido" className="bto-pedido">
+          <button
+            id="add-pedido"
+            onClick={() => setIsModalVisible(true)}
+            className="bto-pedido"
+          >
             <img src="../../public/image/comboum.png" alt="Combo 1" />
             <p id="nome" name="nome" type="text">
               Pizza G + Coca 2 lt
@@ -175,6 +182,7 @@ function App() {
               R$ 40,00
             </p>
           </button>
+          {isModalVisible ? <Modal onClose={() => setIsModalVisible(false)} /> : null}
         </span>
         <span>
           <img src="../../public/image/combodois.png" alt="Combo 2" />
@@ -196,6 +204,7 @@ function App() {
           <p>Pizza G + Coca 2 lt</p>
           <p>R$ 40,00</p>
         </span>
+        <Search />
       </div>
       <footer>
         <img src="../../public/image/usarioicon.png" alt="Usário Icone" />

@@ -1,6 +1,9 @@
-import React from 'react'
+import React,{useState} from 'react'
+import ModalFinal from '../ModalFinal'
 
 export default function Table() {
+
+  const [isModalVisible, setIsModalVisible] = useState(false)
 
   let listaproduto = [
     {
@@ -138,6 +141,10 @@ export default function Table() {
 
     <div>
       <ProductList />
+
+      <button onClick={() => setIsModalVisible(true)}>Finalizar</button>
+      {isModalVisible ? <ModalFinal onClose={() => setIsModalVisible(false)} /> : null}
+      <button>Cancelar</button>
     </div>
   )
 }
