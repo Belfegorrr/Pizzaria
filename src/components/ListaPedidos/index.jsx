@@ -13,42 +13,6 @@ export default function Table() {
       name: 'Pizza G + Coca 2L',
       preco: 40.0
     }
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // },
-    // {
-    //   name: 'Pizza G + Coca 2L',
-    //   preco: 40.0
-    // }
   ]
 
   class Product extends React.Component {
@@ -195,50 +159,75 @@ export default function Table() {
       </button>
       {isModalVisible ? (
         <ModalFinal onClose={() => setIsModalVisible(false)}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form className="form-cep" onSubmit={handleSubmit(onSubmit)}>
             <label>Forma de Entrega </label>
-            <input list="type"></input>
+            <input className="entrega-list" list="type" placeholder='Delivery'></input>
             <datalist id="type">
               <option value="Delivery" />
               <option value="Retirada no Local" />
             </datalist>
-            <label>
-              CEP
-              <input type="text" {...register('cep')} onBlur={checkCEP} />
-            </label>
-            <label>
-              Bairro
-              <input type="text" {...register('bairro')} />
-            </label>
-            <label>
-              Rua
-              <input type="text" {...register('adress')} />
-            </label>
-            <label>
-              Número
-              <input type="text" {...register('adressNumber')} />
-            </label>
-            <label>
-              Cidade
-              <input type="text" {...register('cidade')} />
-            </label>
-            <label>
-              Estado
-              <input type="text" {...register('estado')} />
-            </label>
-            <label>
-              Complemento
-              <input type="text" {...register('complemento')} />
-            </label>
-            <label>
-              Referência
-              <input type="text" {...register('referencia')} />
-            </label>
-            <button>Continuar</button>
+            <div className="conteiner-form">
+              <label>CEP</label>
+              <input
+                className="cep-form"
+                type="text"
+                placeholder='00000-000'
+                {...register('cep')}
+                onBlur={checkCEP}
+              />
+              <label>Bairro</label>
+              <input
+                className="bairro-form"
+                type="text"
+                placeholder='Bairro'
+                {...register('bairro')}
+              />
+            </div>
+            <div>
+              <label>Nº</label>
+              <input
+                className="numero-form"
+                type="text"
+                placeholder='000'
+                {...register('adressNumber')}
+              />
+              <label>Rua</label>
+              <input className="rua-form" type="text" placeholder='Logradouro' {...register('adress')} />
+            </div>
+
+            <label>Cidade</label>
+            <input
+              className="cidade-form"
+              type="text"
+              placeholder='Cidade'
+              {...register('cidade')}
+            />
+            <label>Estado</label>
+            <input
+              className="cidade-form"
+              type="text"
+              placeholder='Estado'
+              {...register('estado')}
+            />
+            <label>Complemento</label>
+            <input
+              className="cidade-form"
+              type="text"
+              placeholder='Complemento'
+              {...register('complemento')}
+            />
+            <label>Referência</label>
+            <input
+              className="cidade-form"
+              type="text"
+              placeholder='Referência'
+              {...register('referencia')}
+            />
+            <button className="btn-form">Continuar</button>
           </form>
         </ModalFinal>
       ) : null}
-      <button className='cancelar-pedido'>Cancelar</button>
+      <button className="cancelar-pedido">Cancelar</button>
     </div>
   )
 }

@@ -13,11 +13,8 @@ export default function ModalFinal({
 
   return (
     <div id={id} className="modal" onClick={handleOutSideClick}>
-      <div className="containermodal">
-        <button className="closemodal" onClick={onClose}>
-          Close
-        </button>
-        <div className="contentmodal">{children}</div>
+      <div className="containermodal-cep">        
+        <div className="contentmodal-cep">{children}</div>
       </div>
     </div>
   )

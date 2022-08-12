@@ -19,12 +19,12 @@ export default function Modal({
           alt="Logo pedido"
         />
         <div>
-          <div>
+          <div className='modaldiv'>
             <h1>Pizza G + Coca 2 lt</h1>
             <h4>2 Sabores</h4>
             <h4>Escolha 1 opção</h4>
             <h2>R$ 40,00</h2>
-            <div>Obrigatório</div>
+            <div className='modalclass'><h4>Obrigatório</h4></div>
           </div>
           <table>
             <thead>
@@ -33,11 +33,11 @@ export default function Modal({
               <th>Quantidade</th>
             </thead>
             <tbody>
-              <tr>
+              <tr className='linha-pedido'>
                 <td>Frango/catupity</td>
                 <td>R$ 40,00</td>
                 <td>
-                  <button>
+                  <button className="btn-outline-primary">
                     <svg
                       width="6"
                       height="3"
@@ -51,8 +51,8 @@ export default function Modal({
                       />
                     </svg>
                   </button>
-                  1
-                  <button>
+                  0
+                  <button className="btn-outline">
                     <svg
                       width="7"
                       height="7"
@@ -72,7 +72,7 @@ export default function Modal({
                 <td>Sensação</td>
                 <td>R$ 40,00</td>
                 <td>
-                  <button>
+                  <button className="btn-outline-primary">
                     <svg
                       width="6"
                       height="3"
@@ -86,8 +86,8 @@ export default function Modal({
                       />
                     </svg>
                   </button>
-                  1
-                  <button>
+                  0
+                  <button className="btn-outline">
                     <svg
                       width="7"
                       height="7"
@@ -107,7 +107,7 @@ export default function Modal({
                 <td>Calabresa c/ bacon</td>
                 <td>R$ 40,00</td>
                 <td>
-                  <button>
+                  <button className="btn-outline-primary">
                     <svg
                       width="6"
                       height="3"
@@ -121,8 +121,8 @@ export default function Modal({
                       />
                     </svg>
                   </button>
-                  1
-                  <button>
+                  0
+                  <button className="btn-outline">
                     <svg
                       width="7"
                       height="7"
@@ -142,7 +142,7 @@ export default function Modal({
                 <td>Sensação</td>
                 <td>R$ 40,00</td>
                 <td>
-                  <button>
+                  <button className="btn-outline-primary">
                     <svg
                       width="6"
                       height="3"
@@ -156,8 +156,8 @@ export default function Modal({
                       />
                     </svg>
                   </button>
-                  1
-                  <button>
+                  0
+                  <button className="btn-outline">
                     <svg
                       width="7"
                       height="7"
@@ -173,12 +173,14 @@ export default function Modal({
                   </button>
                 </td>
               </tr>
+              <tr>
+                <td>Total</td>
+                <td></td>
+                <td>R$ 40,00</td>
+              </tr>
             </tbody>
-          </table>
-          <button className="closemodal" onClick={onClose}>
-            Close
-          </button>
-          <button>Adicionar</button>
+          </table>         
+          <button className='btn-adicionar-pedido'>Adicionar</button>
         </div>
         <div className="contentmodal">{children}</div>
       </div>

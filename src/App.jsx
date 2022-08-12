@@ -29,19 +29,7 @@ function App() {
     {
       id: 5,
       name: 'Sucos'
-    },
-    {
-      id: 6,
-      name: 'Açais'
-    },
-    {
-      id: 7,
-      name: 'Marmita'
-    },
-    {
-      id: 8,
-      name: 'Saúdavel'
-    }
+    },    
   ]
   window.onload = function () {
     const info = document.getElementById('name')
@@ -72,20 +60,20 @@ function App() {
     })
 
     nextBtn.addEventListener('click', function () {
-      currentItem++
-      if (currentItem > lanches.length + 1) {
+      if (currentItem > lanches.length - 1) {
         currentItem = 0
       }
+      currentItem++
       showPerson()
       showItem()
       showTerceiroItem()
     })
 
     prevBtn.addEventListener('click', function () {
-      currentItem--
       if (currentItem < 0) {
         currentItem = lanches.length - 1
       }
+      currentItem--
       showPerson()
       showItem()
       showTerceiroItem()
