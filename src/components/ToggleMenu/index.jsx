@@ -23,7 +23,7 @@ export default function MenuPedidos({ open }) {
 
   return (
     <Pedidos open={open}>
-      <div>
+      <div className='barralateral'>
         <img src="../../public/image/logo.png" alt="Private Code" />
         <Table />        
       </div>

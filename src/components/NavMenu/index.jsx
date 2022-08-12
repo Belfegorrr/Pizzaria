@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styled from 'styled-components';
 import MenuPedidos from "../ToggleMenu";
+import '../../App.css'
 
 const Menu = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ const [open,setOpen] = useState(false)
 
   return (
     <>
-      <Menu open={open} onClick={() => setOpen(!open)}>
+      <Menu className="menu" open={open} onClick={() => setOpen(!open)}>
             <div />
             <div />
             <div />      

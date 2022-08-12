@@ -14,6 +14,7 @@ body {
   height: 100%;
 }
 body {
+  /* width: 37.5rem; */
   font-family: 'Nunito';
   font-size: 1.6rem;
 
@@ -22,7 +23,7 @@ body {
   overflow: overlay;
 }
 .wrapper {
-  width: 37.5rem;
+  width: min(48rem, 100%);
   margin-left: auto;
   margin-right: auto;
 }
@@ -48,6 +49,11 @@ header {
   display: flex;
   align-items: center;
 }
+.pesquisar-op {
+  /* position: fixed; */
+  width: 15rem;
+  height: 3rem;
+}
 .busca {
   width: 10rem;
   height: 5.21rem;
@@ -57,13 +63,19 @@ header {
   border: 0.091rem solid rgba(209, 209, 209, 1);
 }
 .buttonheader {
-  width: 6.3rem;
-  height: 5.21rem;
+  width: 4rem;
+  height: 3rem;
 
   background-color: rgba(232, 55, 55, 1);
 
   border: none;
   border-radius: 0 0.4rem 0.4rem 0;
+}
+.buttonheader svg {
+  height: 2rem;
+}
+.searchbar {
+  display: flex;
 }
 .listamenu {
   margin: 2rem;
@@ -75,29 +87,26 @@ header {
 .selectmenu svg {
   height: 1.595rem;
 }
+.next-btn,
+.prev-btn {
+  background-color: white;
+  border: none;
+}
 .listaitem {
   width: 6rem;
   height: 2rem;
+  font-size: 1.2rem;
 }
-footer {
-  display: flex;
-  align-items: center;
+#add-pedido {
+  display: inline;
+  width: 100%;
+  border: none;
+  background-color: white;
+  justify-content: center;
 }
 
 .container {
-  width: 600px;
-  padding: 50px;
-}
-.container form label {
-  display: block;
-  margin-bottom: 0.8rem;
-  font-weight: bold;
-}
-.container form input {
-  color: inherit;
-  padding: 0.2rem;
-  border: none;
-  border-bottom: solid 2px;
+  width: 50%;
 }
 
 .modal {
@@ -114,6 +123,7 @@ footer {
 }
 
 .containermodal {
+  display: flex;
   background-color: #fff;
   color: #000;
   width: 60%;
@@ -126,4 +136,76 @@ footer {
   width: 32px;
   height: 32px;
   border: none;
+}
+
+.logoselecionado {
+  height: 400px;
+  width: 50%;
+}
+.barralateral {
+  position: absolute;
+  visibility: hidden;
+  z-index: 2;
+}
+.tabelameio {
+  display: flex;
+}
+.btn-outline,
+.btn-outline-primary {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 99rem;
+  border: none;
+}
+.btn-outline {
+  background-color: rgba(232, 55, 55, 1);
+}
+.btn-outline-primary {
+  background-color: rgba(217, 217, 217, 1);
+}
+.finalizar-pedido,
+.cancelar-pedido {
+  width: 8rem;
+  height: 5rem;
+}
+.finalizar-pedido {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(232, 55, 55, 1);
+  border: none;
+}
+.cancelar-pedido {
+  color: rgba(105, 105, 105, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(198, 198, 198, 1);
+  margin-left: 0.5rem;
+}
+.finalizar-pedido svg {
+  margin-right: 0.5rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+footer img {
+  margin-right: 2rem;
+}
+
+/* ----------------------RESPOSIVIDADE------------------- */
+@media screen and (min-width: 500px) {
+  #add-pedido {
+    width: 100%;
+  }
+  .barralateral {
+    visibility: visible;
+    position: initial;
+  }
+  .barralateral img {
+    width: 20rem;
+  }
+  .menu {
+    visibility: hidden;
+  }
 }
